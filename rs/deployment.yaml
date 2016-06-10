@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: static-web-server
-        image: eu.gcr.io/worldofnic-production/static:1.2.1
+        image: eu.gcr.io/worldofnic-production/static:__VERSION__
         ports:
         - containerPort: 80
         - containerPort: 443
