@@ -1,6 +1,0 @@
-static.worldofnic.org:80
-    tls off
-    #tls nic@worldofnic.org
-    #header / Strict-Transport-Security "max-age=31536000;"
-    log stdout
-    errors stdout
