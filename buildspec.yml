@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Actually, this is a static site, so nothing to do in build phase...
+      - date > build_date.txt
+      - printenv > build_env.txt
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - aws s3 cp ./ s3://$BUCKET_NAME/ --recursive --exclude "*" --include "*.html" --include "*.txt" --include "*.pdf" --include "*.ps" --include "*.asc"
+#artifacts:
+#  files:
+#    - '**/*'
+#  base-directory: public
