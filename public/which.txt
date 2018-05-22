@@ -1,1 +1,1 @@
-cloudfront
+netlify
